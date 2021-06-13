@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack serve --open"
   },
   "author": "wendy",
   "license": "ISC",
@@ -13,6 +14,8 @@
   },
   "devDependencies": {
     "html-webpack-plugin": "^5.3.1",
-    "webpack-cli": "^4.7.2"
+    "react": "^17.0.2",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }
