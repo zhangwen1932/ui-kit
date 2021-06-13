@@ -3,15 +3,32 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './index.js',
+  context: path.join(__dirname, 'src/'),
+  entry: './entries/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'test.bundle.js',
+    filename: 'index.js',
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './templates/index.html',
+      inject: 'body'
+    })
   ],
   devServer: {
     contentBase: './dist',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  module: {
+    rules: [{
+      test: /\.jsx?$/,
+      include: [
+        path.join(__dirname, 'src'),
+      ],
+      loader: 'babel-loader',
+    }]
   }
 }
