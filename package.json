@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -r dist/ && webpack --config webpack.config.js",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "wendy",
   "license": "ISC",
@@ -25,6 +27,10 @@
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@commitlint/cli": "^12.1.4",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
     "@types/react-dom": "^17.0.7",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
